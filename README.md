@@ -110,7 +110,7 @@ To run the library, you need:
 1. If Conda is not installed, you can get it from [here](https://docs.anaconda.com/anaconda/install/). You can also use other Python distributions, but we'll assume Conda here for simplicity.
 2. Create a new Python environment: 
       ```bash
-      conda create -n tinytroupe python=3.10
+      conda create -n tinytroupe python=3.10 -y
       ```
 3. Activate the environment: 
       ```bash
@@ -125,18 +125,12 @@ To run the library, you need:
   
 6. Install the library **from this repository, not PyPI**: 
       ```bash   
-      pip install .
+      pip install -e .
+      pip install python-dotenv
       ```
 7. You can now run the examples in the [examples/](./examples/) folder or use TinyTroupe to create your simulations 🥳. If you want to run the examples in the 
    [examples/](./examples/) folder or modify TinyTroupe itself, however, you should clone the repository as described below.
 
-
-### Local development
-
-If you want to modify TinyTroupe itself, you can install it in editable mode (i.e., changes to the code will be reflected immediately):
-```bash
-pip install -e .
-```
 
 ## Principles 
 Recently, we have seen LLMs used to simulate people (such as [this](https://github.com/joonspk-research/generative_agents)), but largely in a “game-like” setting for contemplative or entertainment purposes. There are also libraries for building multiagent systems for proble-solving and assitive AI, like [Autogen](https://microsoft.github.io/) and [Crew AI](https://docs.crewai.com/). What if we combine these ideas and simulate people to support productivity tasks? TinyTroupe is our attempt. To do so, it follows these principles:

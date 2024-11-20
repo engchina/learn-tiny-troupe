@@ -58,7 +58,7 @@ default[&#34;max_attempts&#34;] = float(config[&#34;OpenAI&#34;].get(&#34;MAX_AT
 default[&#34;waiting_time&#34;] = float(config[&#34;OpenAI&#34;].get(&#34;WAITING_TIME&#34;, &#34;0.5&#34;))
 default[&#34;exponential_backoff_factor&#34;] = float(config[&#34;OpenAI&#34;].get(&#34;EXPONENTIAL_BACKOFF_FACTOR&#34;, &#34;5&#34;))
 
-default[&#34;embedding_model&#34;] = config[&#34;OpenAI&#34;].get(&#34;EMBEDDING_MODEL&#34;, &#34;text-embedding-3-small&#34;)
+default[&#34;embedding_model&#34;] = config[&#34;OpenAI&#34;].get(&#34;EMBEDDING_MODEL&#34;, &#34;text-embedding-3-large&#34;)
 
 default[&#34;cache_api_calls&#34;] = config[&#34;OpenAI&#34;].getboolean(&#34;CACHE_API_CALLS&#34;, False)
 default[&#34;cache_file_name&#34;] = config[&#34;OpenAI&#34;].get(&#34;CACHE_FILE_NAME&#34;, &#34;openai_api_cache.pickle&#34;)
@@ -1105,7 +1105,7 @@ client: The client to register.</p></div>
 <h3>Methods</h3>
 <dl>
 <dt id="tinytroupe.openai_utils.OpenAIClient.get_embedding"><code class="name flex">
-<span>def <span class="ident">get_embedding</span></span>(<span>self, text, model='text-embedding-3-small')</span>
+<span>def <span class="ident">get_embedding</span></span>(<span>self, text, model='text-embedding-3-large')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Gets the embedding of the given text using the specified model.</p>
@@ -1134,7 +1134,7 @@ The embedding of the text.</p></div>
 </details>
 </dd>
 <dt id="tinytroupe.openai_utils.OpenAIClient.send_message"><code class="name flex">
-<span>def <span class="ident">send_message</span></span>(<span>self, current_messages, model='gpt-4o', temperature=0.3, max_tokens=4000, top_p=0, frequency_penalty=0.0, presence_penalty=0.0, stop=[], timeout=60.0, max_attempts=5.0, waiting_time=1.0, exponential_backoff_factor=5.0, n=1, echo=False)</span>
+<span>def <span class="ident">send_message</span></span>(<span>self, current_messages, model='gpt-4o', temperature=0.3, max_tokens=4000, TOP_P=0.75, frequency_penalty=0.0, presence_penalty=0.0, stop=[], timeout=60.0, max_attempts=5.0, waiting_time=1.0, exponential_backoff_factor=5.0, n=1, echo=False)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Sends a message to the OpenAI API and returns the response.</p>

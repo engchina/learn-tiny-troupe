@@ -82,7 +82,7 @@ AgentOrWorld = Union[Self, &#34;TinyWorld&#34;]
 config = utils.read_config_file()
 
 default = {}
-default[&#34;embedding_model&#34;] = config[&#34;OpenAI&#34;].get(&#34;EMBEDDING_MODEL&#34;, &#34;text-embedding-3-small&#34;)
+default[&#34;embedding_model&#34;] = config[&#34;OpenAI&#34;].get(&#34;EMBEDDING_MODEL&#34;, &#34;text-embedding-3-large&#34;)
 default[&#34;max_content_display_length&#34;] = config[&#34;OpenAI&#34;].getint(&#34;MAX_CONTENT_DISPLAY_LENGTH&#34;, 1024)
 
 

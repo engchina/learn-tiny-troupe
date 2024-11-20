@@ -42,6 +42,7 @@ AgentOrWorld = Union[Self, "TinyWorld"]
 config = utils.read_config_file()
 
 default = {}
+default["embedding_base_url"] = config["OpenAI"].get("EMBEDDING_BASE_URL", "http://192.168.31.20:7965/v1")
 default["embedding_model"] = config["OpenAI"].get("EMBEDDING_MODEL", "text-embedding-3-small")
 default["max_content_display_length"] = config["OpenAI"].getint("MAX_CONTENT_DISPLAY_LENGTH", 1024)
 
@@ -59,7 +60,7 @@ from llama_index.readers.web import SimpleWebPageReader
 ##    model_name="BAAI/bge-small-en-v1.5"
 ##)
 
-llmaindex_openai_embed_model = OpenAIEmbedding(model=default["embedding_model"], embed_batch_size=10)
+llmaindex_openai_embed_model = OpenAIEmbedding(model=default["embedding_model"], api_base=default["embedding_base_url"], embed_batch_size=10)
 Settings.embed_model = llmaindex_openai_embed_model
 ###############################################################################
 
